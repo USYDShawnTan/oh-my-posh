@@ -1,8 +1,4 @@
 #!/bin/bash
-# 自动添加 PATH 到 bashrc（如果未添加）
-if ! grep -q '/.local/bin' "$CONFIG_FILE"; then
-    echo 'export PATH="$PATH:$HOME/.local/bin"' >> "$CONFIG_FILE"
-fi
 
 # ⚙️ Step 1: 安装 oh-my-posh（使用 curl 安装最新版）
 echo "👉 Installing oh-my-posh..."
@@ -36,7 +32,7 @@ if ! grep -q 'oh-my-posh init' "$CONFIG_FILE"; then
     echo "🛠 Adding oh-my-posh init command to $CONFIG_FILE"
     echo "" >> "$CONFIG_FILE"
     echo "# 👉 oh-my-posh initialization" >> "$CONFIG_FILE"
-    echo 'eval "$(oh-my-posh --init '"$SHELL_NAME"' --config ~/.poshthemes/my.omp.json)"' >> "$CONFIG_FILE"
+    echo 'eval "$(oh-my-posh init '"$SHELL_NAME"' --config ~/.poshthemes/my.omp.json)"' >> "$CONFIG_FILE"
 else
     echo "✅ oh-my-posh already configured in $CONFIG_FILE"
 fi
