@@ -32,7 +32,7 @@ if ! grep -q 'oh-my-posh init' "$CONFIG_FILE"; then
     echo "🛠 Adding oh-my-posh init command to $CONFIG_FILE"
     echo "" >> "$CONFIG_FILE"
     echo "# 👉 oh-my-posh initialization" >> "$CONFIG_FILE"
-    echo 'eval "$(oh-my-posh init '"$SHELL_NAME"' --config ~/.poshthemes/my.omp.json)"' >> "$CONFIG_FILE"
+    echo 'eval "$(oh-my-posh --init --shell '"$SHELL_NAME"' --config ~/.poshthemes/my.omp.json)"' >> "$CONFIG_FILE"
 else
     echo "✅ oh-my-posh already configured in $CONFIG_FILE"
 fi
