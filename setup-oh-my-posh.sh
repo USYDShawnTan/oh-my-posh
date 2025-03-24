@@ -1,4 +1,8 @@
 #!/bin/bash
+# 自动添加 PATH 到 bashrc（如果未添加）
+if ! grep -q '/.local/bin' "$CONFIG_FILE"; then
+    echo 'export PATH="$PATH:$HOME/.local/bin"' >> "$CONFIG_FILE"
+fi
 
 # ⚙️ Step 1: 安装 oh-my-posh（使用 curl 安装最新版）
 echo "👉 Installing oh-my-posh..."
